@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using ConfigInjector.Configuration;
 
-namespace Frakenwiki.Web.Plumbing
+namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
     public static class IoC
     {

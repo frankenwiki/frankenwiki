@@ -1,8 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Frankenwiki;
 using Nancy;
 
-namespace Frakenwiki.Web.Features
+namespace Frankenwiki.Example.NancyWeb.Features
 {
     public class PageModule : NancyModule
     {

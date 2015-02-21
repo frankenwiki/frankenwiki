@@ -5,7 +5,7 @@ using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Diagnostics;
 
-namespace Frakenwiki.Web.Plumbing
+namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
     // From https://github.com/NancyFx/Nancy.Bootstrappers.Autofac
     public abstract class AutofacNancyBootstrapper : NancyBootstrapperWithRequestContainerBase<ILifetimeScope>

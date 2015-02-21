@@ -1,11 +1,10 @@
 ﻿using System.Linq;
 using Autofac;
-using Frankenwiki;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Conventions;
 
-namespace Frakenwiki.Web.Plumbing
+namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
     public class Bootstrapper :AutofacNancyBootstrapper
     {

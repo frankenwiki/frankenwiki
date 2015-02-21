@@ -1,7 +1,6 @@
 ﻿using Autofac;
-using Frankenwiki;
 
-namespace Frakenwiki.Web.Plumbing
+namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
     public class WebAutofacModule : Module
     {

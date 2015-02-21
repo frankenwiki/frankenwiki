@@ -1,7 +1,6 @@
-﻿using Frankenwiki;
-using Nancy;
+﻿using Nancy;
 
-namespace Frakenwiki.Web.Features
+namespace Frankenwiki.Example.NancyWeb.Features
 {
     public class DumpAllModule : NancyModule
     {

@@ -1,5 +1,5 @@
-﻿using Frakenwiki.Web;
-using Frakenwiki.Web.Plumbing;
+﻿using Frankenwiki.Example.NancyWeb;
+using Frankenwiki.Example.NancyWeb.Plumbing;
 using Microsoft.Owin;
 using Microsoft.Owin.Extensions;
 using Nancy.Owin;
@@ -7,7 +7,7 @@ using Owin;
 
 [assembly: OwinStartup(typeof (Startup))]
 
-namespace Frakenwiki.Web
+namespace Frankenwiki.Example.NancyWeb
 {
     public class Startup
     {

@@ -1,6 +1,6 @@
 ﻿using Nancy;
 
-namespace Frakenwiki.Web.Features
+namespace Frankenwiki.Example.NancyWeb.Features
 {
     public class DefaultModule : NancyModule
     {
