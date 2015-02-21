@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Autofac;
+using Frankenwiki;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Conventions;
@@ -17,8 +18,9 @@ namespace Frakenwiki.Web.Plumbing
         protected override void ApplicationStartup(ILifetimeScope container, IPipelines pipelines)
         {
             //var site = container.Resolve<StaticSiteKeySetting>();
-            //var generator = container.Resolve<IStaticWikiGenerator>();
-            //generator.GenerateForSite(site);
+            var generator = container.Resolve<IFrankengenerator>();
+            var store = container.Resolve<IFrankenstore>();
+            generator.GenerateFromSource(@"C:\source\bendetat\frankenwiki\test-wiki", store);
         }
 
         protected override void ConfigureConventions(NancyConventions nancyConventions)

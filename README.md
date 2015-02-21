@@ -4,7 +4,8 @@ Markdown based statically generated wiki engine
 
 ## To do:
 
-- scan configured /wiki and generate static pages
+- scan /wiki and generate static pages
+- configure where the wiki .md files live ('/wiki')
 - save said pages to table storage
 - pipe out stored static pages on request
 - templates / themes
@@ -14,6 +15,7 @@ Markdown based statically generated wiki engine
 - index all page content in Lucene
 - search functionality
 - pluggable security
+- NuGet the .Core project
 
 
 

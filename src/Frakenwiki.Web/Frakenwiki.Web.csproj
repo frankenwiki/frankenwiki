@@ -114,10 +114,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Features\DefaultModule.cs" />
+    <Compile Include="Features\DumpAllModule.cs" />
     <Compile Include="Plumbing\AutofacNancyBootstrapper.cs" />
     <Compile Include="Plumbing\Bootstrapper.cs" />
     <Compile Include="Plumbing\IoC.cs" />
@@ -127,7 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\index.cshtml" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,6 +142,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Frankenwiki\Frankenwiki.csproj">
+      <Project>{a31afbf0-c973-405c-8baa-aa40b368c120}</Project>
+      <Name>Frankenwiki</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
