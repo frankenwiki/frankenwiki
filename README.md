@@ -18,19 +18,19 @@ In the example NancyFx site that hosts a Frankenwiki, pages are served using a g
 ## To do:
 
 
-[-] scan /wiki and generate static pages
-[ ] configure where the wiki .md files live ('/wiki')
-[ ] save said pages to table storage
-[-] pipe out stored static pages on request
-[ ] scan and serve images and other assets
-[ ] templates / themes
-[ ] scan for links on pages, record: pages that this page links to, pages that link to this page
-[ ] file system watcher - rebuild on change
-[ ] record errors: for each page, all pages that this page links to should exist
-[ ] record errors: for each page except for /index, there should be at least one page linking to that page (no orphans)
-[ ] search functionality (Lucene?)
-[ ] pluggable security
-[ ] NuGet it
+- [x] scan /wiki and generate static pages
+- [ ] configure where the wiki .md files live ('/wiki')
+- [ ] save said pages to table storage
+- [x] pipe out stored static pages on request
+- [ ] scan and serve images and other assets
+- [ ] templates / themes
+- [ ] scan for links on pages, record: pages that this page links to, pages that link to this page
+- [ ] file system watcher - rebuild on change
+- [ ] record errors: for each page, all pages that this page links to should exist
+- [ ] record errors: for each page except for /index, there should be at least one page linking to that page (no orphans)
+- [ ] search functionality (Lucene?)
+- [ ] pluggable security
+- [ ] NuGet it
 
 
 
