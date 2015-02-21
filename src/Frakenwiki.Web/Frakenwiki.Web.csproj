@@ -121,6 +121,7 @@
   <ItemGroup>
     <Compile Include="Features\DefaultModule.cs" />
     <Compile Include="Features\DumpAllModule.cs" />
+    <Compile Include="Features\PageModule.cs" />
     <Compile Include="Plumbing\AutofacNancyBootstrapper.cs" />
     <Compile Include="Plumbing\Bootstrapper.cs" />
     <Compile Include="Plumbing\IoC.cs" />

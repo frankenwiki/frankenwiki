@@ -20,5 +20,11 @@ namespace Frankenwiki
         {
             return Task.FromResult(_pages.Values.ToArray());
         }
+
+        public Task<Frankenpage> GetPageAsync(string slug)
+        {
+            var page = _pages.ContainsKey(slug) ? _pages[slug] : null;
+            return Task.FromResult(page);
+        }
     }
 }

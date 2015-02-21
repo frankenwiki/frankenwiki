@@ -37,6 +37,11 @@ namespace Frankenwiki
                 .Replace(sourcePath, "")
                 // replace backslash with forward slash
                 .Replace("\\", "/")
+                // drop .md|.markdown extensions
+                .Replace(".md", "")
+                .Replace(".MD", "")
+                .Replace(".markdown", "")
+                .Replace(".MARKDOWN", "")
                 // cut leading slash
                 .Substring(1);
         }

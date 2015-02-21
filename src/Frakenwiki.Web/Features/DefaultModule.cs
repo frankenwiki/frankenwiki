@@ -6,7 +6,7 @@ namespace Frakenwiki.Web.Features
     {
         public DefaultModule()
         {
-            Get["/"] = _ => View["index"];
+            Get["/"] = _ => Response.AsRedirect("/wiki");
         }
     }
 }

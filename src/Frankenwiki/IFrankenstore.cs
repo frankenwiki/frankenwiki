@@ -7,5 +7,6 @@ namespace Frankenwiki
     {
         Task StoreAsync(IEnumerable<Frankenpage> pages);
         Task<Frankenpage[]> GetAllPagesAsync();
+        Task<Frankenpage> GetPageAsync(string slug);
     }
 }
