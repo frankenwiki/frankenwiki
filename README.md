@@ -3,9 +3,9 @@ Markdown based statically generated wiki engine
 
 ## Usage:
 
-TBD: configuration. It needs to point to the wiki root, at the moment this is a fully-qualified static path.
+The example site (`Frankenwiki.Example.NancyWeb`) has the example wiki source in the `/test-wiki` folder (`/src/Frankenwiki.Example.NancyWeb/test-wiki`). The `test-wiki` part of that is configured in `Web.config` (app settings -> `WikiSourcePath`).
 
-On startup, build a `Frankengenerator` instance and call `GenerateFromSource()`. It requires a path to the wiki files (a heirarchy of Markdown files) and an implementation of `IFrankenstore`. An in-memory frankenstore is provided in the core project and a store using Azure table/blob storage is planned.
+On startup, build a `Frankengenerator` instance and call `GenerateFromSource()`. It requires a path to the wiki files (a heirarchy of Markdown files) and an implementation of `IFrankenstore`. An in-memory `IFrankenstore` implementation is provided in the core project (`InMemoryFrankenstore`) and a store using Azure table/blob storage is planned.
 
 Files are indexed using the path to the file within the source wiki file with extensions stripped - the slug.
 
@@ -19,7 +19,7 @@ In the example NancyFx site that hosts a Frankenwiki, pages are served using a g
 
 
 - [x] scan /wiki and generate static pages
-- [ ] configure where the wiki .md files live ('/wiki')
+- [x] configure where the wiki .md files live ('/wiki')
 - [ ] save said pages to table storage
 - [x] pipe out stored static pages on request
 - [ ] scan and serve images and other assets
