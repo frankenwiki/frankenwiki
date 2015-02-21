@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Nancy;
 
 namespace Frankenwiki.Example.NancyWeb.Features
@@ -20,8 +21,8 @@ namespace Frankenwiki.Example.NancyWeb.Features
             var page = await store.GetPageAsync(slug);
 
             return page == null
-                ? new NotFoundResponse()
-                : Response.AsText(page.Html, "text/html");
+                ? (dynamic)new NotFoundResponse()
+                : View["page-template", page];
         }
     }
 }

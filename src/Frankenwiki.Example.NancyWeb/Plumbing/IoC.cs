@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using ConfigInjector.Configuration;
 
 namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
@@ -13,13 +12,6 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
             {
                 typeof (WebAutofacModule).Assembly,
             };
-
-            ConfigurationConfigurator
-                .RegisterConfigurationSettings()
-                .FromAssemblies(assemblies)
-                .RegisterWithContainer(s => builder.RegisterInstance(s).AsSelf().SingleInstance())
-                .AllowConfigurationEntriesThatDoNotHaveSettingsClasses(true)
-                .DoYourThing();
 
             builder.RegisterAssemblyModules(assemblies);
 

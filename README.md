@@ -23,7 +23,7 @@ In the example NancyFx site that hosts a Frankenwiki, pages are served using a g
 - [ ] save said pages to table storage
 - [x] pipe out stored static pages on request
 - [ ] scan and serve images and other assets
-- [ ] templates / themes
+- [x] templates / themes
 - [ ] scan for links on pages, record: pages that this page links to, pages that link to this page
 - [ ] file system watcher - rebuild on change
 - [ ] record errors: for each page, all pages that this page links to should exist
@@ -31,7 +31,10 @@ In the example NancyFx site that hosts a Frankenwiki, pages are served using a g
 - [ ] search functionality (Lucene?)
 - [ ] pluggable security
 - [ ] NuGet it
-
-
+- [ ] Page title - use YAML front matter (http://jekyllrb.com/docs/frontmatter/), pull out H1, or fall back to humanised slug
+- [ ] Categories - pull out of YAML front matter
+- [ ] Wiki title in test site - to be configurable
+- [ ] Index of all pages
+- [ ] Index of all categories
 
 

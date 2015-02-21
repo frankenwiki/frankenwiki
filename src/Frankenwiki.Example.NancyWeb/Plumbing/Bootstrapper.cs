@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Configuration;
+using System.IO;
+using System.Linq;
 using Autofac;
 using Nancy;
 using Nancy.Bootstrapper;
@@ -16,10 +18,12 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
 
         protected override void ApplicationStartup(ILifetimeScope container, IPipelines pipelines)
         {
-            //var site = container.Resolve<StaticSiteKeySetting>();
+            var site = ConfigurationManager.AppSettings["WikiSourcePath"];
             var generator = container.Resolve<IFrankengenerator>();
             var store = container.Resolve<IFrankenstore>();
-            generator.GenerateFromSource(@"C:\source\bendetat\frankenwiki\test-wiki", store);
+            var pathProvider = container.Resolve<IRootPathProvider>();
+            
+            generator.GenerateFromSource(Path.Combine(pathProvider.GetRootPath(), site), store);
         }
 
         protected override void ConfigureConventions(NancyConventions nancyConventions)

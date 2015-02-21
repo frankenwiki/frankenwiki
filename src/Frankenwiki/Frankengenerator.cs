@@ -22,9 +22,10 @@ namespace Frankenwiki
                 let fileAsHtml = markdown.Transform(fileAsMarkdown)
                 let slug = GetSlug(filePath, sourcePath)
                 select new Frankenpage(
-                    fileAsMarkdown,
-                    fileAsHtml,
-                    slug);
+                    slug: slug,
+                    title: "Title of Page",
+                    markdown: fileAsMarkdown,
+                    html: fileAsHtml);
             
             store.StoreAsync(pages);
         }
