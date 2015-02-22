@@ -45,7 +45,7 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 - [x] Categories - pull out of YAML front matter
 - [ ] Wiki title in test site - to be configurable
 - [ ] Index of all pages
-- [ ] Index of all categories
+- [x] Index of all categories
 - [ ] table storage IFrankenstore
 
 
