@@ -47,5 +47,15 @@ namespace Frankenwiki
 
             return index;
         }
+
+        public Task<FrankenpageCategory[]> GetAllCategoriesAsync()
+        {
+            var categories = _pages.Values
+                .SelectMany(x => x.Categories)
+                .DistinctBy(x => x.Slug)
+                .ToArray();
+
+            return Task.FromResult(categories);
+        }
     }
 }

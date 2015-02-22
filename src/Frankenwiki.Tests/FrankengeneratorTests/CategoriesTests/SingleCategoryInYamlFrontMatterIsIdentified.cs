@@ -1,15 +1,16 @@
-﻿using Shouldly;
+using System.Linq;
+using Shouldly;
 using TestStack.BDDfy;
 using Xunit;
 
 namespace Frankenwiki.Tests.FrankengeneratorTests.CategoriesTests
 {
-    public class NoCategoriesInYamlFrontMatterEqualsNoCategories
+    public class SingleCategoryInYamlFrontMatterIsIdentified
     {
         private Frankengenerator _generator;
         private InMemoryFrankenstore _store;
         private Frankenpage _page;
-        private const string Slug = "with-no-categories-in-the-yaml";
+        private const string Slug = "with-one-category-in-the-yaml";
 
         public void GivenGenerator()
         {
@@ -28,9 +29,19 @@ namespace Frankenwiki.Tests.FrankengeneratorTests.CategoriesTests
                 .Result;
         }
 
-        public void ThenThereAreNoCategoriesInThePage()
+        public void ThenThereIsOneCategoryInThePage()
         {
-            _page.Categories.ShouldBeEmpty();
+            _page.Categories.Length.ShouldBe(1);
+        }
+
+        public void AndThenTheSingleCategoryHasTheCorrectSlug()
+        {
+            _page.Categories.Single().Slug.ShouldBe("one-category");
+        }
+
+        public void AndThenTheSingleCategoryHasAHumanizedName()
+        {
+            _page.Categories.Single().Name.ShouldBe("One Category");
         }
 
         [Fact]

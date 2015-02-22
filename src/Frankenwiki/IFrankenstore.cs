@@ -9,5 +9,6 @@ namespace Frankenwiki
         Task<Frankenpage[]> GetAllPagesAsync();
         Task<Frankenpage> GetPageAsync(string slug);
         Task<Frankindex> GetIndexForCategory(string categorySlug);
+        Task<FrankenpageCategory[]> GetAllCategoriesAsync();
     }
 }

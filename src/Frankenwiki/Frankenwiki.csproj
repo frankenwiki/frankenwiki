@@ -59,6 +59,7 @@
     <Compile Include="IFrankengenerator.cs" />
     <Compile Include="InMemoryFrankenstore.cs" />
     <Compile Include="Plumbing\DictionaryExtensions`AddRange.cs" />
+    <Compile Include="Plumbing\EnumerableExtensions`DistinctBy.cs" />
     <Compile Include="Plumbing\ListExtensions`AddRange.cs" />
     <Compile Include="Plumbing\YamlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

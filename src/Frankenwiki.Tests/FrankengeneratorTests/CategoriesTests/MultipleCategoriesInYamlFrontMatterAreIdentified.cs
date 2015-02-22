@@ -1,15 +1,15 @@
-﻿using Shouldly;
+using Shouldly;
 using TestStack.BDDfy;
 using Xunit;
 
 namespace Frankenwiki.Tests.FrankengeneratorTests.CategoriesTests
 {
-    public class NoCategoriesInYamlFrontMatterEqualsNoCategories
+    public class MultipleCategoriesInYamlFrontMatterAreIdentified
     {
         private Frankengenerator _generator;
         private InMemoryFrankenstore _store;
         private Frankenpage _page;
-        private const string Slug = "with-no-categories-in-the-yaml";
+        private const string Slug = "with-two-categories-in-the-yaml";
 
         public void GivenGenerator()
         {
@@ -28,9 +28,21 @@ namespace Frankenwiki.Tests.FrankengeneratorTests.CategoriesTests
                 .Result;
         }
 
-        public void ThenThereAreNoCategoriesInThePage()
+        public void ThenThereAreTwoCategoriesInThePage()
         {
-            _page.Categories.ShouldBeEmpty();
+            _page.Categories.Length.ShouldBe(2);
+        }
+
+        public void AndThenTheSingleCategoryHasTheCorrectSlug()
+        {
+            _page.Categories.ShouldContain(x => x.Slug == "one-category");
+            _page.Categories.ShouldContain(x => x.Slug == "two-category");
+        }
+
+        public void AndThenTheSingleCategoryHasAHumanizedName()
+        {
+            _page.Categories.ShouldContain(x => x.Name == "One Category");
+            _page.Categories.ShouldContain(x => x.Name == "Two Category");
         }
 
         [Fact]

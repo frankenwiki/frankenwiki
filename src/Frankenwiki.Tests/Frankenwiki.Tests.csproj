@@ -77,7 +77,9 @@
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\TestDots.cs" />
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\WithPageInStoreItServesThePage.cs" />
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\WithStaticContentMatchingRequestItReturnsTheStaticContent.cs" />
+    <Compile Include="FrankengeneratorTests\CategoriesTests\MultipleCategoriesInYamlFrontMatterAreIdentified.cs" />
     <Compile Include="FrankengeneratorTests\CategoriesTests\NoCategoriesInYamlFrontMatterEqualsNoCategories.cs" />
+    <Compile Include="FrankengeneratorTests\CategoriesTests\SingleCategoryInYamlFrontMatterIsIdentified.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageHasCorrectBody.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageWithSomeYamlHasCorrectBody.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithH1SpecifyingTheTitle.cs" />
@@ -86,6 +88,9 @@
     <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1AndNestedSlugTheLastPartOfTheSlugIsHumanisedForTheTitle.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1TheSlugIsHumanisedForTheTitle.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithYamlFrontMatterSpecifyingTheTitle.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetAllCategoriesTests\CategoriesWhenThereArePages.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetAllCategoriesTests\CategoriesWhenThereArePagesInSameCategory.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetAllCategoriesTests\NoCategoriesWhenThereAreNoPages.cs" />
     <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\CategoryHtmlComesFromLinkedCategoryPage.cs" />
     <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\CorrectResultReturnedForMatchingCategory.cs" />
     <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\NoResultsReturnedForBadCategory.cs" />

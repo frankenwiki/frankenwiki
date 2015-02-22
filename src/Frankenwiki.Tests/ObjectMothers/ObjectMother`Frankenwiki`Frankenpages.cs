@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Frankenwiki.Tests.ObjectMothers.Plumbing;
 
@@ -22,7 +23,7 @@ namespace Frankenwiki.Tests.ObjectMothers
                     public override Frankenpage Build()
                     {
                         return new Frankenpage(
-                            Get(x => x.Slug, "slug"),
+                            Get(x => x.Slug, "slug-" + Guid.NewGuid()),
                             Get(x => x.Markdown, "markdown"),
                             Get(x => x.Html, "html"),
                             Get(x => x.Title, "title"),

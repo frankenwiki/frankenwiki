@@ -1,5 +1,4 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.Frankindex>
-@using System
 @using System.Linq
 @{
     Layout = "site-template.cshtml";
@@ -27,12 +26,25 @@ else
 @if (Model.Items.Any())
 {
     <h2>Articles</h2>
-    <ul>
-        @foreach (var item in Model.Items)
-        {
-            <li><a href="/wiki/@item.PageSlug">@item.Title</a></li>
-        }
-    </ul>
+    if (Model.Items.Count() > 1)
+    {
+        <p>There are @Model.Items.Count() articles in this category.</p>
+    }
+    else
+    {
+        <p>There is 1 article in this category.</p>
+    }
+
+    foreach (var group in Model.Items.GroupBy(x => x.Title.First()).OrderBy(x => x))
+    {
+        <h3>@group.Key</h3>
+        <ul>
+            @foreach (var item in group)
+            {
+                <li><a href="/wiki/@item.PageSlug">@item.Title</a></li>
+            }
+        </ul>
+    }
 }
 else
 {
