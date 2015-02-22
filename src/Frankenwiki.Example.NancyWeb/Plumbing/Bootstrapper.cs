@@ -18,12 +18,13 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
 
         protected override void ApplicationStartup(ILifetimeScope container, IPipelines pipelines)
         {
-            var site = ConfigurationManager.AppSettings["WikiSourcePath"];
             var generator = container.Resolve<IFrankengenerator>();
             var store = container.Resolve<IFrankenstore>();
-            var pathProvider = container.Resolve<IRootPathProvider>();
-            
-            generator.GenerateFromSource(Path.Combine(pathProvider.GetRootPath(), site), store);
+            var rootPathProvider = container.Resolve<IRootPathProvider>();
+            var wikiSourcePathSetting = container.Resolve<WikiSourcePathSetting>();
+            var sourcePath = Path.Combine(rootPathProvider.GetRootPath(), wikiSourcePathSetting);
+
+            generator.GenerateFromSource(sourcePath, store);
         }
 
         protected override void ConfigureConventions(NancyConventions nancyConventions)

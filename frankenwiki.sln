@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki", "src\Frankenw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Example.NancyWeb", "src\Frankenwiki.Example.NancyWeb\Frankenwiki.Example.NancyWeb.csproj", "{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Tests", "src\Frankenwiki.Tests\Frankenwiki.Tests.csproj", "{FC706F31-5C33-45C5-B347-01C122576419}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC706F31-5C33-45C5-B347-01C122576419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC706F31-5C33-45C5-B347-01C122576419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC706F31-5C33-45C5-B347-01C122576419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC706F31-5C33-45C5-B347-01C122576419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

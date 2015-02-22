@@ -47,6 +47,9 @@
     <Reference Include="Checkk">
       <HintPath>..\..\packages\check.0.0.5.0\lib\net45\Checkk.dll</HintPath>
     </Reference>
+    <Reference Include="ConfigInjector">
+      <HintPath>..\..\packages\ConfigInjector.1.1.0.175\lib\net45\ConfigInjector.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -106,6 +109,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="ThirdDrawer">
+      <HintPath>..\..\packages\ThirdDrawer.1.0.1.3\lib\net40\ThirdDrawer.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config">
@@ -120,15 +126,20 @@
     <Compile Include="Plumbing\Bootstrapper.cs" />
     <Compile Include="Plumbing\IoC.cs" />
     <Compile Include="Plumbing\WebAutofacModule.cs" />
+    <Compile Include="Plumbing\WikiSourcePathSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\index.cshtml" />
+    <Content Include="Views\index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\page-template.cshtml" />
+    <Content Include="Views\page-template.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -14,6 +14,17 @@ Files are indexed using the path to the file within the source wiki file with ex
 
 In the example NancyFx site that hosts a Frankenwiki, pages are served using a greedy segment route pattern such that `/wiki/index` will serve the `index` slug, and `/wiki/types-of-crystal-confectionaries/purple-haze` will serve the `types-of-crystal-confectionaries/purple-haze` slug. It uses the `IFrankenstore` method `GetPageAsync` to retrieve the page content. Thus, links in the source wiki files of the form `[/wiki/foo/bar](Link)` will link directly to a page with the `foo/bar` slug. See `PageModule` for more information.
 
+### Static resources
+
+Any files within the wiki site that are referenced directly are served as static content. For example, if the wiki site is `test-wiki` and there is an image at `test-wiki/images/cat.jpg`, a wiki page could reference the image using something like `![](/wiki/images/cat.jpg/`) and the image will be served when the page is rendered.
+
+Note the trailing forward-slash in the path the image:
+
+	![](/wiki/images/cat.jpg/
+
+This is required due to a Nancy bug. See the "Known issues" section below.
+
+
 
 ## To do:
 
@@ -22,7 +33,7 @@ In the example NancyFx site that hosts a Frankenwiki, pages are served using a g
 - [x] configure where the wiki .md files live ('/wiki')
 - [ ] save said pages to table storage
 - [x] pipe out stored static pages on request
-- [ ] scan and serve images and other assets
+- [x] serve images and other static assets
 - [x] templates / themes
 - [ ] scan for links on pages, record: pages that this page links to, pages that link to this page
 - [ ] file system watcher - rebuild on change
@@ -37,4 +48,8 @@ In the example NancyFx site that hosts a Frankenwiki, pages are served using a g
 - [ ] Index of all pages
 - [ ] Index of all categories
 
+
+## Known issues
+
+- The `/wiki` route will fail to match if the requested slug has a dot somewhere in the last part of the segment (eg. `/wiki/images/cat.jpg`). This is due to a [possible bug](https://github.com/NancyFx/Nancy/issues/1829) in NancyFx. A workaround is to add a trailing slash (`/wiki/images/cat.jpg/`) which will allow the route to match, then the trailing slash is trimmed out before processing the route.
 

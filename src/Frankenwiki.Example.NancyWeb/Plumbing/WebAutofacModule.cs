@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using ConfigInjector.Configuration;
 
 namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
@@ -6,6 +7,13 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
     {
         protected override void Load(ContainerBuilder builder)
         {
+            ConfigurationConfigurator
+                .RegisterConfigurationSettings()
+                .FromAssemblies(typeof(WebAutofacModule).Assembly)
+                .RegisterWithContainer(s => builder.RegisterInstance(s).AsSelf().SingleInstance())
+                .AllowConfigurationEntriesThatDoNotHaveSettingsClasses(true)
+                .DoYourThing();
+
             builder
                 .RegisterType<Frankengenerator>()
                 .As<IFrankengenerator>();
