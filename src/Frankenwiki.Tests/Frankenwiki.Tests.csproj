@@ -77,6 +77,9 @@
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\TestDots.cs" />
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\WithPageInStoreItServesThePage.cs" />
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\WithStaticContentMatchingRequestItReturnsTheStaticContent.cs" />
+    <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageHasCorrectBody.cs" />
+    <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageWithSomeYamlHasCorrectBody.cs" />
+    <Compile Include="FrankengeneratorTests\TitleTests\WithYamlFrontMatterSpecifyingTheTitle.cs" />
     <Compile Include="ItShouldHaveTests.cs" />
     <Compile Include="ObjectMothers\ObjectMother`Frankenwiki`Frankenpages.cs" />
     <Compile Include="ObjectMothers\Plumbing\BuilderFor.cs" />
@@ -86,6 +89,15 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <Content Include="test-wiki\with-yaml-front-matter-specifying-the-title.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test-wiki\simple-test-page-with-some-yaml.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test-wiki\simple-test-page.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>

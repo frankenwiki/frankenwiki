@@ -1,5 +1,7 @@
-Ghost Cat
-=========
+---
+title: Ghost cat
+categories: confectionary-types, cats
+---
 
 
 ![](ghost-cat.jpg/)
