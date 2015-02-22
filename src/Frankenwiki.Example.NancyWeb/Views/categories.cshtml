@@ -20,7 +20,7 @@
         <p>There is 1 category.</p>
     }
 
-    foreach (var group in Model.GroupBy(x => x.Name.First()).OrderBy(x => x))
+    foreach (var group in Model.GroupBy(x => x.Name.First()).OrderBy(x => x.Key))
     {
         <h3>@group.Key</h3>
         <ul>

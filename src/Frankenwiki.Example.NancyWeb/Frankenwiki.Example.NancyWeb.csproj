@@ -122,6 +122,7 @@
     <Compile Include="Features\CategoriesModule.cs" />
     <Compile Include="Features\CategoryModule.cs" />
     <Compile Include="Features\DefaultModule.cs" />
+    <Compile Include="Features\IndexModule.cs" />
     <Compile Include="Features\PageModule.cs" />
     <Compile Include="Plumbing\AutofacNancyBootstrapper.cs" />
     <Compile Include="Plumbing\Bootstrapper.cs" />
@@ -148,6 +149,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\categories.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\pages-index.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Web.Debug.config">

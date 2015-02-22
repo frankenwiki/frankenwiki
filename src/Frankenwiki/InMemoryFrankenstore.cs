@@ -57,5 +57,14 @@ namespace Frankenwiki
 
             return Task.FromResult(categories);
         }
+
+        public Task<FrankindexItem[]> GetPageIndicesAsync()
+        {
+            var indices =
+                from page in _pages
+                select new FrankindexItem(page.Value.Slug, page.Value.Title);
+
+            return Task.FromResult(indices.ToArray());
+        }
     }
 }
