@@ -49,7 +49,9 @@ namespace Frankenwiki.Example.NancyWeb.Features
         }
 
         // note the async is required otherwise messing with Task.FromResult<dynamic> is just painful
+        #pragma warning disable 1998
         private async Task<dynamic> GetStaticResourceForSlug(string slug)
+        #pragma warning restore 1998
         {
             var path = Path.Combine(_rootPathProvider.GetRootPath(), _wikiSourcePath, slug);
 
@@ -62,7 +64,7 @@ namespace Frankenwiki.Example.NancyWeb.Features
 
             return page == null
                 ? null
-                : View["page-template", page];
+                : View["page", page];
         }
     }
 }

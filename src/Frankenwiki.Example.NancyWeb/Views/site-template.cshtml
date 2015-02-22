@@ -1,5 +1,4 @@
-﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.Frankenpage>
-@using System
+﻿@using System
 @using System.Linq
 
 <!DOCTYPE html>
@@ -8,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@Model.Title</title>
+    <title>@ViewBag.Title</title>
     
     <link href="/content/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="/Content/site.css" rel="stylesheet"/>
@@ -49,36 +48,7 @@
                 </div>
 
                 <div class="col-md-offset-1 col-md-9">
-                    <h1>@Model.Title</h1>
-
-                    <hr />
-
-                    @Html.Raw(Model.Html)
-
-                    <hr />
-                    
-                    @if (Model.Categories.Any())
-                    {
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span class="glyphicon glyphicon-education"></span> Categories</h3>
-                                <div class="panel-body">
-                                    <ul>
-                                        @foreach (var category in Model.Categories)
-                                        {
-                                            <li><a href="/category/@category.Slug">@category.Name</a></li>
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="well well-sm">
-                            <p><span class="glyphicon glyphicon-education"></span> No categories</p>
-                        </div>
-                    }
+                    @RenderBody()
                 </div>
             </div>
         </div>

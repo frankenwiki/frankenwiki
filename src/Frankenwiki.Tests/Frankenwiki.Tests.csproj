@@ -77,6 +77,7 @@
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\TestDots.cs" />
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\WithPageInStoreItServesThePage.cs" />
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\WithStaticContentMatchingRequestItReturnsTheStaticContent.cs" />
+    <Compile Include="FrankengeneratorTests\CategoriesTests\NoCategoriesInYamlFrontMatterEqualsNoCategories.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageHasCorrectBody.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageWithSomeYamlHasCorrectBody.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithH1SpecifyingTheTitle.cs" />
@@ -85,6 +86,11 @@
     <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1AndNestedSlugTheLastPartOfTheSlugIsHumanisedForTheTitle.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1TheSlugIsHumanisedForTheTitle.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithYamlFrontMatterSpecifyingTheTitle.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\CategoryHtmlComesFromLinkedCategoryPage.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\CorrectResultReturnedForMatchingCategory.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\NoResultsReturnedForBadCategory.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\NoResultsReturnedWhenStoreIsEmpty.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\GetIndexForCategoryTests\SingleResultReturnedForMatchingCategory.cs" />
     <Compile Include="ItShouldHaveTests.cs" />
     <Compile Include="ObjectMothers\ObjectMother`Frankenwiki`Frankenpages.cs" />
     <Compile Include="ObjectMothers\Plumbing\BuilderFor.cs" />
@@ -112,9 +118,18 @@
     <None Include="test-wiki\nested\with-no-yaml-header-and-no-h1s.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="test-wiki\with-one-category-in-the-yaml.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="test-wiki\with-no-yaml-header-and-no-h1s.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="test-wiki\with-no-categories-in-the-yaml.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test-wiki\with-two-categories-in-the-yaml.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -119,6 +119,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\CategoryModule.cs" />
     <Compile Include="Features\DefaultModule.cs" />
     <Compile Include="Features\DumpAllModule.cs" />
     <Compile Include="Features\PageModule.cs" />
@@ -137,7 +138,13 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\page-template.cshtml">
+    <Content Include="Views\page.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\site-template.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\category.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Web.Debug.config">

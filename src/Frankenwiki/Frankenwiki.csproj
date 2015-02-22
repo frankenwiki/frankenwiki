@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Frankenpage.cs" />
+    <Compile Include="Frankindex.cs" />
+    <Compile Include="FrankindexItem.cs" />
     <Compile Include="IFrankenstore.cs" />
     <Compile Include="IFrankengenerator.cs" />
     <Compile Include="InMemoryFrankenstore.cs" />

@@ -12,16 +12,13 @@
             string slug,
             string markdown, 
             string html,
-            string title)
+            string title,
+            FrankenpageCategory[] categories)
         {
             Markdown = markdown;
             Html = html;
             Slug = slug;
-            Categories = new[]
-            {
-                new FrankenpageCategory("twelve-tone-technique", "Twelve-tone technique"),
-                new FrankenpageCategory("disambiguation-pages", "Disambiguation pages"),
-            };
+            Categories = categories;
             Title = title;
         }
     }

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using CsQuery;
 using Frankenwiki.Plumbing;
@@ -41,7 +43,24 @@ namespace Frankenwiki
                 slug: slug,
                 title: title,
                 markdown: fileAsMarkdown,
-                html: html);
+                html: html,
+                categories: GetCategories(frontMatter));
+        }
+
+        private static FrankenpageCategory[] GetCategories(
+            IDictionary<string, object> frontMatter)
+        {
+            return new[]
+            {
+                frontMatter.ContainsKey("category") ? frontMatter["category"] : null,
+                frontMatter.ContainsKey("categories") ? frontMatter["categories"] : null
+            }
+                .Where(x => x != null)
+                .Cast<string>()
+                .SelectMany(x => x.Split(','))
+                .Select(x => x.Trim())
+                .Select(x => new FrankenpageCategory(x, x.Humanize(LetterCasing.Title)))
+                .ToArray();
         }
 
         static string GetTitle(
