@@ -1,4 +1,5 @@
 ﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.Frankenpage>
+@using System
 @using System.Linq
 
 <!DOCTYPE html>
@@ -80,6 +81,16 @@
                     }
                 </div>
             </div>
+        </div>
+        
+        <div class="container">
+            <hr/>
+            <p>
+                <small>
+                    Generated using <a href="https://github.com/bendetat/frankenwiki">Frankenwiki</a>.
+                    Content &copy; @DateTime.Now.Year YOUR COMPANY
+                </small>
+            </p>
         </div>
 
         <script src="/Content/bower_components/jquery/dist/jquery.min.js"></script>

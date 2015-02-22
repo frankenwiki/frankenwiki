@@ -42,7 +42,7 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 - [ ] search functionality (Lucene?)
 - [ ] pluggable security
 - [ ] NuGet it
-- [ ] Page title - use YAML front matter (http://jekyllrb.com/docs/frontmatter/), pull out H1, or fall back to humanised slug
+- [x] Page title - use YAML front matter (http://jekyllrb.com/docs/frontmatter/), pull out H1, or fall back to humanised slug
 - [ ] Categories - pull out of YAML front matter
 - [ ] Wiki title in test site - to be configurable
 - [ ] Index of all pages
@@ -52,4 +52,11 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 ## Known issues
 
 - The `/wiki` route will fail to match if the requested slug has a dot somewhere in the last part of the segment (eg. `/wiki/images/cat.jpg`). This is due to a [possible bug](https://github.com/NancyFx/Nancy/issues/1829) in NancyFx. A workaround is to add a trailing slash (`/wiki/images/cat.jpg/`) which will allow the route to match, then the trailing slash is trimmed out before processing the route.
+
+
+## License
+
+Frankenwiki uses Apache License Version 2.0. See <LICENSE.md> for the full license.
+
+Includes code from [Code 52's Pretzel](https://github.com/Code52/pretzel) which uses the Microsoft Public License. See <LICENSE-MS-PL.md> for the full license.
 

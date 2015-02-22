@@ -79,6 +79,11 @@
     <Compile Include="Example.NancyWeb\Features\PageModuleTests\WithStaticContentMatchingRequestItReturnsTheStaticContent.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageHasCorrectBody.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageWithSomeYamlHasCorrectBody.cs" />
+    <Compile Include="FrankengeneratorTests\TitleTests\WithH1SpecifyingTheTitle.cs" />
+    <Compile Include="FrankengeneratorTests\TitleTests\WithH1SpecifyingTheTitleTheH1IsStrippedFromTheHtml.cs" />
+    <Compile Include="FrankengeneratorTests\TitleTests\WithMultipleH1OnlyTheFirstIsUsedForTheTitle.cs" />
+    <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1AndNestedSlugTheLastPartOfTheSlugIsHumanisedForTheTitle.cs" />
+    <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1TheSlugIsHumanisedForTheTitle.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithYamlFrontMatterSpecifyingTheTitle.cs" />
     <Compile Include="ItShouldHaveTests.cs" />
     <Compile Include="ObjectMothers\ObjectMother`Frankenwiki`Frankenpages.cs" />
@@ -98,6 +103,18 @@
     <Content Include="test-wiki\simple-test-page.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="test-wiki\with-h1-specifying-the-title.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test-wiki\with-multiple-h1s.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="test-wiki\nested\with-no-yaml-header-and-no-h1s.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="test-wiki\with-no-yaml-header-and-no-h1s.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>

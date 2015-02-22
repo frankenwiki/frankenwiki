@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using CsQuery;
 using Frankenwiki.Plumbing;
+using Humanizer;
 using MarkdownSharp;
 
 namespace Frankenwiki
@@ -32,22 +34,42 @@ namespace Frankenwiki
             string fileAsMarkdown)
         {
             var frontMatter = fileAsMarkdown.FromYamlHeader();
+            var html = Markdown.Transform(GetMarkdownWithoutYamlFrontMatter(fileAsMarkdown));
+            var title = GetTitle(frontMatter, ref html, slug);
 
             return new Frankenpage(
                 slug: slug,
-                title: GetTitle(frontMatter),
+                title: title,
                 markdown: fileAsMarkdown,
-                html: Markdown.Transform(GetMarkdownWithoutYamlFrontMatter(fileAsMarkdown)));
+                html: html);
         }
 
-        static string GetTitle(IDictionary<string, object> frontMatter)
+        static string GetTitle(
+            IDictionary<string, object> frontMatter,
+            ref string html,
+            string slug)
         {
             if (frontMatter.ContainsKey("title"))
             {
                 return (string) frontMatter["title"];
             }
 
-            return "eh?";
+            var dom = new CQ(html);
+            var firstH1 = dom["h1"]
+                .Select(x => x.InnerText)
+                .FirstOrDefault();
+
+            if (!string.IsNullOrEmpty(firstH1))
+            {
+                dom["h1"].FirstElement().Remove();
+                html = dom.Render();
+                return firstH1;
+            }
+
+            return slug
+                .Split('/')
+                .Last()
+                .Humanize(LetterCasing.Title);
         }
 
         private static string GetMarkdownWithoutYamlFrontMatter(string fileAsMarkdown)
