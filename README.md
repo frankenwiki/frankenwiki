@@ -1,4 +1,5 @@
-# frankenwiki
+# [Frankenwiki](http://frankenwiki.com)
+
 Markdown based statically generated wiki engine
 
 ## Usage:
