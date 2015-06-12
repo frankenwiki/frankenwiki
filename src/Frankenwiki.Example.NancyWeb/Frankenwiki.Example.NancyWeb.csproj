@@ -124,6 +124,8 @@
     <Compile Include="Features\DefaultModule.cs" />
     <Compile Include="Features\IndexModule.cs" />
     <Compile Include="Features\PageModule.cs" />
+    <Compile Include="Features\SearchModule.cs" />
+    <Compile Include="Models\SearchResultsModel.cs" />
     <Compile Include="Plumbing\AutofacNancyBootstrapper.cs" />
     <Compile Include="Plumbing\Bootstrapper.cs" />
     <Compile Include="Plumbing\IoC.cs" />
@@ -152,6 +154,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\pages-index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\search.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\search-results.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Web.Debug.config">

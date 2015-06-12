@@ -53,10 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Frankenpage.cs" />
+    <Compile Include="FrankensearchResult.cs" />
     <Compile Include="Frankindex.cs" />
     <Compile Include="FrankindexItem.cs" />
+    <Compile Include="IFrankensearch.cs" />
     <Compile Include="IFrankenstore.cs" />
     <Compile Include="IFrankengenerator.cs" />
+    <Compile Include="InMemoryFrankensearch.cs" />
     <Compile Include="InMemoryFrankenstore.cs" />
     <Compile Include="Plumbing\DictionaryExtensions`AddRange.cs" />
     <Compile Include="Plumbing\EnumerableExtensions`DistinctBy.cs" />

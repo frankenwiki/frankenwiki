@@ -1,0 +1,30 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<SearchResultsModel>
+@using System
+@using System.Linq
+@using System.Collections.Generic
+@using Frankenwiki
+@using Frankenwiki.Example.NancyWeb.Models
+
+@{
+    Layout = "site-template.cshtml";
+    ViewBag.Title = "Search - " + Model.Phrase;
+    var results = Model.Results;
+}
+
+<h1>Search - @Model.Phrase</h1>
+
+<hr />
+
+@if (!results.Any())
+{
+    <p>No results...</p>
+}
+else
+{
+    <ul>
+        @foreach (var result in Model.Results)
+        {
+            <li><a href="/wiki/@result.PageSlug">@result.Title</a></li>
+        }
+    </ul>
+}

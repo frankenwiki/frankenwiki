@@ -21,6 +21,10 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
                 .RegisterType<InMemoryFrankenstore>()
                 .As<IFrankenstore>()
                 .SingleInstance();
+            builder
+                .RegisterType<InMemoryFrankensearch>()
+                .As<IFrankensearch>()
+                .SingleInstance();
         }
     }
 }
