@@ -39,6 +39,7 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 - [ ] file system watcher - rebuild on change
 - [ ] record errors: for each page, all pages that this page links to should exist
 - [ ] record errors: for each page except for /index, there should be at least one page linking to that page (no orphans)
+- [x] experimental (in-memory) search
 - [ ] search functionality (Lucene?)
 - [ ] pluggable security
 - [ ] NuGet it
