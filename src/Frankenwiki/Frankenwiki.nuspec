@@ -11,4 +11,7 @@
     <releaseNotes>https://github.com/frankenwiki/frankenwiki/releases</releaseNotes>
     <projectUrl>http://frankenwiki.com</projectUrl>
   </metadata>
+  <files>
+    <file src="bin\release\Frankenwiki.dll" />
+  </files>
 </package>
