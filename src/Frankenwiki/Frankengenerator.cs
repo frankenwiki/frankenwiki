@@ -36,7 +36,8 @@ namespace Frankenwiki
             string fileAsMarkdown)
         {
             var frontMatter = fileAsMarkdown.FromYamlHeader();
-            var html = Markdown.Transform(GetMarkdownWithoutYamlFrontMatter(fileAsMarkdown));
+            var markdown = GetMarkdownWithoutYamlFrontMatter(fileAsMarkdown);
+            var html = Transform(markdown);
             var title = GetTitle(frontMatter, ref html, slug);
 
             return new Frankenpage(
@@ -45,6 +46,18 @@ namespace Frankenwiki
                 markdown: fileAsMarkdown,
                 html: html,
                 categories: GetCategories(frontMatter));
+        }
+
+        private static string Transform(string markdown)
+        {
+            string html;
+
+            lock (Markdown)
+            {
+                html = Markdown.Transform(markdown);
+            }
+            
+            return html;
         }
 
         private static FrankenpageCategory[] GetCategories(
