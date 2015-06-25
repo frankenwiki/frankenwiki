@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using ConfigInjector.Configuration;
+using Frankenwiki.Configuration;
 
 namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
@@ -13,6 +14,10 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
                 .RegisterWithContainer(s => builder.RegisterInstance(s).AsSelf().SingleInstance())
                 .AllowConfigurationEntriesThatDoNotHaveSettingsClasses(true)
                 .DoYourThing();
+
+            builder.Register(_ => new FrankenwikiConfiguration()
+                .WithWikiSourcePath(_.Resolve<WikiSourcePathSetting>()))
+                .AsSelf();
 
             builder
                 .RegisterType<Frankengenerator>()

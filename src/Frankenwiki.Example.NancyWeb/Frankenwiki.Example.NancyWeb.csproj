@@ -130,14 +130,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\CategoriesModule.cs" />
-    <Compile Include="Features\CategoryModule.cs" />
-    <Compile Include="Features\DefaultModule.cs" />
-    <Compile Include="Features\IndexModule.cs" />
-    <Compile Include="Features\PageModule.cs" />
-    <Compile Include="Features\SearchModule.cs" />
-    <Compile Include="Features\Tools\WhatLinksToModule.cs" />
-    <Compile Include="Models\SearchResultsModel.cs" />
     <Compile Include="Plumbing\AutofacNancyBootstrapper.cs" />
     <Compile Include="Plumbing\Bootstrapper.cs" />
     <Compile Include="Plumbing\IoC.cs" />
@@ -181,10 +173,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Content\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Frankenwiki.Host.Nancy\Frankenwiki.Host.Nancy.csproj">
+      <Project>{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}</Project>
+      <Name>Frankenwiki.Host.Nancy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Frankenwiki\Frankenwiki.csproj">
       <Project>{a31afbf0-c973-405c-8baa-aa40b368c120}</Project>
       <Name>Frankenwiki</Name>
