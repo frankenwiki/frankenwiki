@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Frankenwiki.Plumbing;
 using Humanizer;
@@ -14,7 +16,25 @@ namespace Frankenwiki
         {
             _pages.AddRange(pages, p => p.Slug);
 
+            IndexAllPages();
+
             return Task.FromResult(0);
+        }
+
+        void IndexAllPages()
+        {
+            // TODO GetPageIndicesAsync
+            // TODO GetAllCategoriesAsync
+            // TODO GetIndexForCategory for each category slug
+
+            foreach (var page in _pages)
+            {
+                page.Value.SetAllLinksToMe(new Lazy<IEnumerable<string>>(() => 
+                    (from linkingPage in _pages
+                    where linkingPage.Value.AllLinks.Contains(page.Key)
+                    select linkingPage.Key).Distinct()));
+            }
+
         }
 
         public Task<Frankenpage[]> GetAllPagesAsync()
