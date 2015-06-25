@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Frankenwiki.Example.NancyWeb.Features;
+﻿using System.Threading.Tasks;
+using Frankenwiki.Configuration;
 using Frankenwiki.Example.NancyWeb.Plumbing;
+using Frankenwiki.Host.Nancy.Features;
 using Frankenwiki.Tests.ObjectMothers;
 using Nancy.Testing;
 using NSubstitute;
-using Shouldly;
 using TestStack.BDDfy;
 using Xunit;
 
@@ -40,11 +35,14 @@ namespace Frankenwiki.Tests.Example.NancyWeb.Features.PageModuleTests
 
         public void AndGivenTheBrowser()
         {
+            var configuration = new FrankenwikiConfiguration()
+                .WithWikiSourcePath("test-wiki");
+
             _browser = new Browser(with =>
             {
                 with.Module<PageModule>();
                 with.Dependency(_store);
-                with.Dependency(new WikiSourcePathSetting {Value = "test-wiki"});
+                with.Dependency(configuration);
             });
         }
 
@@ -64,7 +62,4 @@ namespace Frankenwiki.Tests.Example.NancyWeb.Features.PageModuleTests
             this.BDDfy();
         }
     }
-    
-
-
 }
