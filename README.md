@@ -42,8 +42,8 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 - [ ] record errors: for each page except for /index, there should be at least one page linking to that page (no orphans)
 - [x] experimental (in-memory) search
 - [ ] search functionality (Lucene?)
-- [ ] pluggable security
-- [ ] NuGet it
+- [ ] pluggable security - LDAP
+- [ ] NuGet it - in progress
 - [x] Categories - pull out of YAML front matter
 - [ ] Wiki title in test site - to be configurable
 - [x] Index of all pages
