@@ -44,14 +44,15 @@ namespace Frankenwiki.Tests.InMemoryFrankenstoreTests
 
 Content for secondary page with one returning link:
 
-[returning link](/test-1)
-", "/test-2");
+[returning link](/wiki/test-1)
+", "test-2");
         }
 
         void ThenThePrimaryPageHasTheCorrectLinkToMe()
         {
             _primaryPage.AllLinksToMe.Count().ShouldBe(1);
-            _primaryPage.AllLinksToMe.Single().ShouldBe("/test-2");
+            _primaryPage.AllLinksToMe.ShouldContain(x => x.PageSlug == "test-2");
+            _primaryPage.AllLinksToMe.ShouldContain(x => x.Title == "test-2");
         }
 
         void ThenThePrimaryPageHasNoLinksToMe()
@@ -62,7 +63,7 @@ Content for secondary page with one returning link:
         async void WhenThePagesAreIndexed()
         {
             var generator = new InMemoryFrankenstore();
-            await generator.StoreAsync(new[] {_primaryPage, _secondaryPage});
+            await generator.StoreAsync(new[] { _primaryPage, _secondaryPage });
         }
 
         void GivenSecondaryPageWithNoReturningLinks()
@@ -71,7 +72,7 @@ Content for secondary page with one returning link:
 # Test 2
 
 Content for secondary page with no returning links.
-", "/test-2");
+", "test-2");
         }
 
         private void GivenPrimaryPage()
@@ -80,7 +81,7 @@ Content for secondary page with no returning links.
 # Test 1
 
 Content for primary page
-", "/test-1");
+", "test-1");
         }
 
         static Frankenpage GetFrankenpage(string markdown, string slug)

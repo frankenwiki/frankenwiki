@@ -98,7 +98,7 @@
     <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1AndNestedSlugTheLastPartOfTheSlugIsHumanisedForTheTitle.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithNoYamlHeaderAndNoH1TheSlugIsHumanisedForTheTitle.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithYamlFrontMatterSpecifyingTheTitle.cs" />
-    <Compile Include="FrankenpageTests\AllLinksTests.cs" />
+    <Compile Include="InMemoryFrankenstoreTests\AllLinksTests.cs" />
     <Compile Include="InMemoryFrankenstoreTests\AllLinksToMeTests.cs" />
     <Compile Include="InMemoryFrankenstoreTests\GetAllCategoriesTests\CategoriesWhenThereArePages.cs" />
     <Compile Include="InMemoryFrankenstoreTests\GetAllCategoriesTests\CategoriesWhenThereArePagesInSameCategory.cs" />
@@ -163,6 +163,9 @@
     <Content Include="test-wiki\static-content\ghost-cat.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FrankenpageTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

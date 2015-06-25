@@ -2,8 +2,12 @@
 @using System
 @using System.Linq
 @{
-    Layout = "site-template.cshtml";
+    Layout = "_Layout.cshtml";
     ViewBag.Title = Model.Title;
+}
+
+@section tools {
+    <li><a href="/what-links-to/@Model.Slug" title="A list of articles that link to this article"><span class="glyphicon glyphicon-link"></span>What links here</a></li>
 }
 
 <h1>@Model.Title</h1>

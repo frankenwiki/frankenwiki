@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Frankenwiki.Plumbing;
 using Humanizer;
@@ -11,30 +9,24 @@ namespace Frankenwiki
     public class InMemoryFrankenstore : IFrankenstore
     {
         private readonly IDictionary<string, Frankenpage> _pages = new Dictionary<string, Frankenpage>();
+        private FrankenpageCategory[] _allCategories;
 
         public Task StoreAsync(IEnumerable<Frankenpage> pages)
         {
             _pages.AddRange(pages, p => p.Slug);
+            _allCategories = null;
 
             IndexAllPages();
 
             return Task.FromResult(0);
         }
 
-        void IndexAllPages()
+        private void IndexAllPages()
         {
-            // TODO GetPageIndicesAsync
-            // TODO GetAllCategoriesAsync
-            // TODO GetIndexForCategory for each category slug
-
             foreach (var page in _pages)
             {
-                page.Value.SetAllLinksToMe(new Lazy<IEnumerable<string>>(() => 
-                    (from linkingPage in _pages
-                    where linkingPage.Value.AllLinks.Contains(page.Key)
-                    select linkingPage.Key).Distinct()));
+                page.Value.SetAllPages(_pages.Values);
             }
-
         }
 
         public Task<Frankenpage[]> GetAllPagesAsync()
@@ -70,12 +62,12 @@ namespace Frankenwiki
 
         public Task<FrankenpageCategory[]> GetAllCategoriesAsync()
         {
-            var categories = _pages.Values
+            _allCategories = _allCategories ?? _pages.Values
                 .SelectMany(x => x.Categories)
                 .DistinctBy(x => x.Slug)
                 .ToArray();
 
-            return Task.FromResult(categories);
+            return Task.FromResult(_allCategories);
         }
 
         public Task<FrankindexItem[]> GetPageIndicesAsync()
