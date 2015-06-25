@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B353A7
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Host.Nancy", "src\Frankenwiki.Host.Nancy\Frankenwiki.Host.Nancy.csproj", "{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{FC706F31-5C33-45C5-B347-01C122576419}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC706F31-5C33-45C5-B347-01C122576419}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC706F31-5C33-45C5-B347-01C122576419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

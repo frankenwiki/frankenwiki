@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<package> 
+  <metadata> 
+    <id>frankenwiki.host.nancy</id> 
+    <title>Frankenwiki.Host.Nancy</title>
+    <version>0.0.0</version> 
+    <authors>Ben Scott</authors>
+    <description>Nancy host helpers for Frankenwiki</description> 
+    <language>en-US</language>
+    <licenseUrl>https://github.com/frankenwiki/frankenwiki/blob/master/LICENSE.md</licenseUrl>
+    <releaseNotes>https://github.com/frankenwiki/frankenwiki/releases</releaseNotes>
+    <projectUrl>http://frankenwiki.com</projectUrl>
+  </metadata>
+  <files>
+    <file src="bin\release\Frankenwiki.Host.Nancy.dll" />
+  </files>
+</package>
