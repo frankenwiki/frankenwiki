@@ -48,7 +48,7 @@ namespace Frankenwiki
                 categories: GetCategories(frontMatter));
         }
 
-        private static string Transform(string markdown)
+        public static string Transform(string markdown)
         {
             string html;
 
