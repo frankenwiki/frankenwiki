@@ -49,6 +49,7 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 - [x] Index of all pages
 - [x] Index of all categories
 - [ ] table storage IFrankenstore
+- [ ] SQL Server IFrankenstore
 
 
 ## Known issues
