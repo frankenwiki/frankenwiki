@@ -9,12 +9,24 @@ namespace Frankenwiki
     public class InMemoryFrankenstore : IFrankenstore
     {
         private readonly IDictionary<string, Frankenpage> _pages = new Dictionary<string, Frankenpage>();
+        private FrankenpageCategory[] _allCategories;
 
         public Task StoreAsync(IEnumerable<Frankenpage> pages)
         {
             _pages.AddRange(pages, p => p.Slug);
+            _allCategories = null;
+
+            IndexAllPages();
 
             return Task.FromResult(0);
+        }
+
+        private void IndexAllPages()
+        {
+            foreach (var page in _pages)
+            {
+                page.Value.SetAllPages(_pages.Values);
+            }
         }
 
         public Task<Frankenpage[]> GetAllPagesAsync()
@@ -50,12 +62,12 @@ namespace Frankenwiki
 
         public Task<FrankenpageCategory[]> GetAllCategoriesAsync()
         {
-            var categories = _pages.Values
+            _allCategories = _allCategories ?? _pages.Values
                 .SelectMany(x => x.Categories)
                 .DistinctBy(x => x.Slug)
                 .ToArray();
 
-            return Task.FromResult(categories);
+            return Task.FromResult(_allCategories);
         }
 
         public Task<FrankindexItem[]> GetPageIndicesAsync()

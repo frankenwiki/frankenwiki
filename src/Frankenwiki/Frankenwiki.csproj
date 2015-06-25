@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Frankenpage.cs" />
+    <Compile Include="FrankenpageCategory.cs" />
     <Compile Include="FrankensearchResult.cs" />
     <Compile Include="Frankindex.cs" />
     <Compile Include="FrankindexItem.cs" />
@@ -64,8 +65,10 @@
     <Compile Include="InMemoryFrankensearch.cs" />
     <Compile Include="InMemoryFrankenstore.cs" />
     <Compile Include="Plumbing\DictionaryExtensions`AddRange.cs" />
+    <Compile Include="Plumbing\DictionaryExtensions`MaybeGetValue.cs" />
     <Compile Include="Plumbing\EnumerableExtensions`DistinctBy.cs" />
     <Compile Include="Plumbing\ListExtensions`AddRange.cs" />
+    <Compile Include="Plumbing\Maybe.cs" />
     <Compile Include="Plumbing\YamlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Frankengenerator.cs" />

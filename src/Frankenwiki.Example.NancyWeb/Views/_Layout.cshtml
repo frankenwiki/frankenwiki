@@ -38,9 +38,10 @@
                         <li><span class="glyphicon glyphicon-home"></span> <a href="/">Home</a></li>
                         <li><span class="glyphicon glyphicon-list-alt"></span> <a href="/index">Index</a></li>
                         <li><span class="glyphicon glyphicon-education"></span> <a href="/categories">All categories</a></li>
+                        @RenderSection("tools", false)
                     </ul>
                 </div>
-
+                
                 <div class="col-md-offset-1 col-md-9">
                     @RenderBody()
                 </div>
