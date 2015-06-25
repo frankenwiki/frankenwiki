@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Frankenwiki.Example.NancyWeb.Features;
+﻿using System.Threading.Tasks;
+using Frankenwiki.Configuration;
 using Frankenwiki.Example.NancyWeb.Plumbing;
+using Frankenwiki.Host.Nancy.Features;
 using Nancy.Testing;
 using NSubstitute;
 using Shouldly;
@@ -33,7 +30,8 @@ namespace Frankenwiki.Tests.Example.NancyWeb.Features.PageModuleTests
             {
                 with.Module<PageModule>();
                 with.Dependency(_store);
-                with.Dependency(new WikiSourcePathSetting { Value = "test-wiki" });
+                with.Dependency(new FrankenwikiConfiguration()
+                    .WithWikiSourcePath("test-wiki"));
             });
         }
 
