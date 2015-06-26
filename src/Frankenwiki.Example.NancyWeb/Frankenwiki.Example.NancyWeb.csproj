@@ -173,7 +173,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Frankenwiki.Host.Nancy\Frankenwiki.Host.Nancy.csproj">
       <Project>{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}</Project>
