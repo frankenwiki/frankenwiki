@@ -35,8 +35,9 @@ namespace Frankenwiki.Tests.Example.NancyWeb.Features.PageModuleTests
 
         public void AndGivenTheBrowser()
         {
-            var configuration = new FrankenwikiConfiguration()
-                .WithWikiSourcePath("test-wiki");
+            var configuration = FrankenwikiConfiguration.Create()
+                .WithWikiSourcePath("test-wiki")
+                .Build();
 
             _browser = new Browser(with =>
             {
