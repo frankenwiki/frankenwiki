@@ -15,8 +15,9 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
                 .AllowConfigurationEntriesThatDoNotHaveSettingsClasses(true)
                 .DoYourThing();
 
-            builder.Register(_ => new FrankenwikiConfiguration()
-                .WithWikiSourcePath(_.Resolve<WikiSourcePathSetting>()))
+            builder.Register(_ => FrankenwikiConfiguration.Create()
+                .WithWikiSourcePath(_.Resolve<WikiSourcePathSetting>())
+                .Build())
                 .AsSelf();
 
             builder

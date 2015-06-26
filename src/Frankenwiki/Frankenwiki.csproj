@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\FrankenwikiConfiguration.cs" />
+    <Compile Include="Configuration\FrankenwikiConfigurationBuilder.cs" />
     <Compile Include="Frankenpage.cs" />
     <Compile Include="FrankenpageCategory.cs" />
     <Compile Include="FrankensearchResult.cs" />
