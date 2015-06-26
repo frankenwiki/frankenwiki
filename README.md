@@ -44,6 +44,7 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 - [ ] search functionality (Lucene?)
 - [ ] pluggable security - LDAP
 - [ ] NuGet it - in progress
+- [ ] Example site - in progress
 - [x] Categories - pull out of YAML front matter
 - [ ] Wiki title in test site - to be configurable
 - [x] Index of all pages
