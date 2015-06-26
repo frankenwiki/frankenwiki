@@ -36,7 +36,7 @@ This is required due to a Nancy bug. See the "Known issues" section below.
 - [x] serve images and other static assets
 - [x] templates / themes
 - [x] Page title - use YAML front matter (http://jekyllrb.com/docs/frontmatter/), pull out H1, or fall back to humanised slug
-- [ ] scan for links on pages, record: pages that this page links to, pages that link to this page
+- [x] scan for links on pages, record: pages that this page links to, pages that link to this page
 - [ ] file system watcher - rebuild on change
 - [ ] record errors: for each page, all pages that this page links to should exist
 - [ ] record errors: for each page except for /index, there should be at least one page linking to that page (no orphans)
