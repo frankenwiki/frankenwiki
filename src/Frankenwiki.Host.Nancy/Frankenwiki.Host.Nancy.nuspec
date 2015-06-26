@@ -10,14 +10,14 @@
     <licenseUrl>https://github.com/frankenwiki/frankenwiki/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>https://github.com/frankenwiki/frankenwiki/releases</releaseNotes>
     <projectUrl>http://frankenwiki.com</projectUrl>
+    <dependencies>
+      <group>
+        <dependency id="Nancy" version="1.2.0" />
+        <dependency id="Frankenwiki" version="0.6.0"/>
+      </group>
+    </dependencies>
   </metadata>
   <files>
     <file src="bin\release\Frankenwiki.Host.Nancy.dll" target="lib\net451" />
   </files>
-  <dependencies>
-    <group>
-      <dependency id="Nancy" version="1.2.0" />
-      <dependency id="Frankenwiki" version="0.6.0"/>
-    </group>
-  </dependencies>
 </package>

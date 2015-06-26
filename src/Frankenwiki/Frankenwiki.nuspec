@@ -10,16 +10,16 @@
     <licenseUrl>https://github.com/frankenwiki/frankenwiki/blob/master/LICENSE.md</licenseUrl>
     <releaseNotes>https://github.com/frankenwiki/frankenwiki/releases</releaseNotes>
     <projectUrl>http://frankenwiki.com</projectUrl>
+    <dependencies>
+      <group>
+        <dependency id="CsQuery" version="1.3.4" />
+        <dependency id="Humanizer" version="1.36.0" />
+        <dependency id="MarkdownSharp" version="1.13.0.0" />
+        <dependency id="YamlDotNet" version="3.6.0" />
+      </group>
+    </dependencies>
   </metadata>
   <files>
     <file src="bin\release\Frankenwiki.dll" target="lib\net451" />
   </files>
-  <dependencies>
-    <group>
-      <dependency id="CsQuery" version="1.3.4" />
-      <dependency id="Humanizer" version="1.36.0" />
-      <dependency id="MarkdownSharp" version="1.13.0.0" />
-      <dependency id="YamlDotNet" version="3.6.0" />
-    </group>
-  </dependencies>
 </package>
