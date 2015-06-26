@@ -12,6 +12,6 @@
     <projectUrl>http://frankenwiki.com</projectUrl>
   </metadata>
   <files>
-    <file src="bin\release\Frankenwiki.Host.Nancy.dll" target="lib\net45" />
+    <file src="bin\release\Frankenwiki.Host.Nancy.dll" target="lib\net451" />
   </files>
 </package>
