@@ -12,6 +12,6 @@
     <projectUrl>http://frankenwiki.com</projectUrl>
   </metadata>
   <files>
-    <file src="bin\release\Frankenwiki.dll" />
+    <file src="bin\release\Frankenwiki.dll" target="lib\net45" />
   </files>
 </package>
