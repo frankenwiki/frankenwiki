@@ -5,12 +5,17 @@
     /// </summary>
     public class FrankenwikiConfiguration
     {
-        public FrankenwikiConfiguration WithWikiSourcePath(string wikiSourcePath)
+        public static FrankenwikiConfigurationBuilder Create()
         {
-            WikiSourcePath = wikiSourcePath;
-            return this;
+            return new FrankenwikiConfigurationBuilder();
         }
 
         public string WikiSourcePath { get; private set; }
+
+        internal FrankenwikiConfiguration(
+            string wikiSourcePath)
+        {
+            WikiSourcePath = wikiSourcePath;
+        }
     }
 }

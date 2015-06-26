@@ -30,8 +30,9 @@ namespace Frankenwiki.Tests.Example.NancyWeb.Features.PageModuleTests
             {
                 with.Module<PageModule>();
                 with.Dependency(_store);
-                with.Dependency(new FrankenwikiConfiguration()
-                    .WithWikiSourcePath("test-wiki"));
+                with.Dependency(FrankenwikiConfiguration.Create()
+                    .WithWikiSourcePath("test-wiki")
+                    .Build());
             });
         }
 
