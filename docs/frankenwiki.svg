@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200px" height="1200px" viewBox="0 0 1200 1200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>frankenwiki</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1200" height="1200" rx="140"></rect>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="fw-logo" sketch:type="MSLayerGroup">
+            <mask id="mask-2" sketch:name="Mask" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#E41F1F" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+            <rect id="Rectangle-1" stroke="#979797" fill="#55A305" sketch:type="MSShapeGroup" mask="url(#mask-2)" x="0" y="0" width="1200" height="1200"></rect>
+            <path d="M0,0 L1200,0 L1200,552.135375 C1200,552.135375 1060.75189,351.275093 896.298348,347.775314 C791.219523,345.539103 617.783038,527.272692 581.461523,527.272703 C581.461523,527.272703 544.664081,323.879432 530.439162,323.879432 C512.565471,323.879432 351.28795,487.134245 347.003425,482.279915 C328.109891,460.87371 232.584609,288.685174 214.144339,288.685195 C197.864625,288.685213 0,455.670457 0,455.670457 L0,0 Z" id="Rectangle-2" stroke="#979797" fill="#000000" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            <circle id="Oval-1" stroke="#979797" fill="#000000" sketch:type="MSShapeGroup" mask="url(#mask-2)" cx="242.224013" cy="927.800161" r="67.2038678"></circle>
+            <circle id="Oval-2" stroke="#979797" fill="#000000" sketch:type="MSShapeGroup" mask="url(#mask-2)" cx="652.215955" cy="848.509267" r="146.494762"></circle>
+        </g>
+    </g>
+</svg>
