@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using CsQuery;
+using Frankenwiki.Domain.EventHandlers;
+using Frankenwiki.Events;
 using Frankenwiki.Plumbing;
 using Humanizer;
 using MarkdownSharp;
@@ -15,6 +17,12 @@ namespace Frankenwiki
     public class Frankengenerator: IFrankengenerator
     {
         static readonly Markdown Markdown = new Markdown();
+        private readonly IDomainEventBroker _domainEventBroker;
+
+        public Frankengenerator(IDomainEventBroker domainEventBroker)
+        {
+            _domainEventBroker = domainEventBroker;
+        }
 
         public void GenerateFromSource(
             string sourcePath,
@@ -30,7 +38,7 @@ namespace Frankenwiki
             
             store.StoreAsync(pages);
 
-
+            _domainEventBroker.Raised(new FrankenwikiGeneratedEvent());
         }
 
         static Frankenpage BuildUpPage(

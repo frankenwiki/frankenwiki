@@ -1,6 +1,9 @@
 ﻿using Autofac;
 using ConfigInjector.Configuration;
 using Frankenwiki.Configuration;
+using Frankenwiki.Domain.EventHandlers;
+using Frankenwiki.Events;
+using Frankenwiki.Lucence;
 
 namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
@@ -28,9 +31,21 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
                 .As<IFrankenstore>()
                 .SingleInstance();
             builder
-                .RegisterType<InMemoryFrankensearch>()
+                .RegisterType<FrankenLuceneSearcher>()
                 .As<IFrankensearch>()
                 .SingleInstance();
+            builder
+                .RegisterType<FrankenLuceneIndexBuilder>()
+                .As<IFrankenLuceneIndexBuilder>()
+                .SingleInstance();
+            builder
+                .RegisterType<DomainEventBroker>()
+                .As<IDomainEventBroker>()
+                .SingleInstance();
+            builder
+               .RegisterType<FrankenwikiGeneratedEventHandler>()
+               .As(typeof(IDomainEventHandler<FrankenwikiGeneratedEvent>))
+               .InstancePerDependency();
         }
     }
 }

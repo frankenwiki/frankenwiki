@@ -22,6 +22,7 @@
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -177,6 +178,10 @@
     <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Frankenwiki.Lucence\Frankenwiki.Lucence.csproj">
+      <Project>{2856db69-f0c9-4d43-bf9a-f96ca5860e77}</Project>
+      <Name>Frankenwiki.Lucence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Frankenwiki.Host.Nancy\Frankenwiki.Host.Nancy.csproj">
       <Project>{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}</Project>
       <Name>Frankenwiki.Host.Nancy</Name>

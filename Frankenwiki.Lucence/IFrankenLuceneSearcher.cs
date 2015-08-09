@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
@@ -10,24 +6,25 @@ using Lucene.Net.Store;
 
 namespace Frankenwiki.Lucence
 {
-    public interface IFrankenLuceneSearcher : IFrankensearch
+    public interface IFrankenLuceneIndexBuilder
     {
         void AddOrUpdateIndex(IEnumerable<Frankenpage> frankenpages);
         void ClearIndex();
     }
 
-    public class FrankenLuceneSearcher : IFrankenLuceneSearcher
+    public class FrankenLuceneIndexBuilder : IFrankenLuceneIndexBuilder
     {
         private RAMDirectory _indexDirectory;
 
-        public FrankenLuceneSearcher()
+        public FrankenLuceneIndexBuilder()
         {
             _indexDirectory = new RAMDirectory();
         }
 
-        private Document ToLucenceDocument(Frankenpage frankenPage)
+        private Document MapPageToLucenceDocument(Frankenpage frankenPage)
         {
             var doc = new Document();
+            doc.Add(new Field("slug", frankenPage.Title, Field.Store.YES, Field.Index.NOT_ANALYZED));
             doc.Add(new Field("title", frankenPage.Title, Field.Store.YES, Field.Index.ANALYZED));
             doc.Add(new Field("markdown", frankenPage.Markdown, Field.Store.YES, Field.Index.ANALYZED));
             return doc;
@@ -40,7 +37,7 @@ namespace Frankenwiki.Lucence
             {
                 foreach (var frankenPage in frankenpages)
                 {
-                    var doc = ToLucenceDocument(frankenPage);
+                    var doc = MapPageToLucenceDocument(frankenPage);
                     writer.AddDocument(doc);
                 }
 
@@ -61,11 +58,6 @@ namespace Frankenwiki.Lucence
                 analyzer.Close();
                 writer.Dispose();
             }
-        }
-
-        public Task<FrankensearchResult[]> SearchAsync(string phrase)
-        {
-            throw new NotImplementedException();
         }
     }
 }
