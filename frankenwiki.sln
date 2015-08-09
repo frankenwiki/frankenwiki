@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki", "src\Frankenwiki\Frankenwiki.csproj", "{A31AFBF0-C973-405C-8BAA-AA40B368C120}"
 EndProject
@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B353A7
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Host.Nancy", "src\Frankenwiki.Host.Nancy\Frankenwiki.Host.Nancy.csproj", "{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Lucence", "Frankenwiki.Lucence\Frankenwiki.Lucence.csproj", "{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

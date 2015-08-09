@@ -29,6 +29,8 @@ namespace Frankenwiki
                 select BuildUpPage(slug, fileAsMarkdown);
             
             store.StoreAsync(pages);
+
+
         }
 
         static Frankenpage BuildUpPage(
