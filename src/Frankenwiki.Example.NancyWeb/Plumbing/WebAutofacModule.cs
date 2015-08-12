@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using ConfigInjector.Configuration;
 using Frankenwiki.Configuration;
+using Frankenwiki.Domain.EventHandlers;
 
 namespace Frankenwiki.Example.NancyWeb.Plumbing
 {
@@ -30,6 +31,11 @@ namespace Frankenwiki.Example.NancyWeb.Plumbing
             builder
                 .RegisterType<InMemoryFrankensearch>()
                 .As<IFrankensearch>()
+                .SingleInstance();
+
+            builder
+                .RegisterType<DomainEventBroker>()
+                .As<IDomainEventBroker>()
                 .SingleInstance();
         }
     }
