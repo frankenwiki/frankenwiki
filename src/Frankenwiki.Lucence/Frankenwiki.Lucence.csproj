@@ -55,7 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\Frankenwiki\Frankenwiki.csproj">
+    <ProjectReference Include="..\Frankenwiki\Frankenwiki.csproj">
       <Project>{a31afbf0-c973-405c-8baa-aa40b368c120}</Project>
       <Name>Frankenwiki</Name>
     </ProjectReference>

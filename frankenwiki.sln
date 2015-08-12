@@ -19,7 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B353A7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Host.Nancy", "src\Frankenwiki.Host.Nancy\Frankenwiki.Host.Nancy.csproj", "{3B8289E8-FB93-4CB6-AFDB-00707DBC7222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Lucence", "Frankenwiki.Lucence\Frankenwiki.Lucence.csproj", "{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Lucence", "src\Frankenwiki.Lucence\Frankenwiki.Lucence.csproj", "{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frankenwiki.Example.Lucene", "src\Frankenwiki.Example.Lucene\Frankenwiki.Example.Lucene.csproj", "{C608F845-EC12-4FA1-ABCC-0D122989CB86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2856DB69-F0C9-4D43-BF9A-F96CA5860E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C608F845-EC12-4FA1-ABCC-0D122989CB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C608F845-EC12-4FA1-ABCC-0D122989CB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C608F845-EC12-4FA1-ABCC-0D122989CB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C608F845-EC12-4FA1-ABCC-0D122989CB86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

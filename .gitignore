@@ -18,6 +18,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+#Packages folder
+packages/
+
 # Roslyn cache directories
 *.ide/
 

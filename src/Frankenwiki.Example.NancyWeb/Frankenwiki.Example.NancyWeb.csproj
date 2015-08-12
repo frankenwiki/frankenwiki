@@ -178,7 +178,7 @@
     <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Frankenwiki.Lucence\Frankenwiki.Lucence.csproj">
+    <ProjectReference Include="..\Frankenwiki.Lucence\Frankenwiki.Lucence.csproj">
       <Project>{2856db69-f0c9-4d43-bf9a-f96ca5860e77}</Project>
       <Name>Frankenwiki.Lucence</Name>
     </ProjectReference>
