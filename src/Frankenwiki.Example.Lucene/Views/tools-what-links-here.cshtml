@@ -1,0 +1,33 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.Frankenpage>
+@using System.Linq
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = "What links to: " + Model.Title;
+}
+
+<h1>Articles that link to @Model.Title</h1>
+
+
+<hr/>
+@if (Model.AllLinksToMe.Count() > 1)
+{
+    <p>@Model.AllLinksToMe.Count() articles link to <a href="/wiki/@Model.Slug">@Model.Title</a>.</p>
+}
+else if (Model.AllLinksToMe.Count() == 1)
+{
+    <p>
+        One article links to <a href="/wiki/@Model.Slug">@Model.Title</a>.
+    </p>
+}
+else
+{
+    <p>No articles link to <a href="/wiki/@Model.Slug">@Model.Title</a>.</p>
+}
+
+<ul>
+@foreach (var item in Model.AllLinksToMe)
+{
+    <li><a href="/wiki/@item.PageSlug">@item.Title</a></li>
+}
+</ul>
+

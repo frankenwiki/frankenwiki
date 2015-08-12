@@ -1,0 +1,37 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.FrankenpageCategory[]>
+@using System.Linq
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = "All Categories";
+}
+
+<h1>All Categories</h1>
+
+<hr />
+
+@if (Model.Any())
+{
+    if (@Model.Count() > 1)
+    {
+        <p>There are @Model.Count() categories.</p>
+    }
+    else
+    {
+        <p>There is 1 category.</p>
+    }
+
+    foreach (var group in Model.GroupBy(x => x.Name.First()).OrderBy(x => x.Key))
+    {
+        <h3>@group.Key</h3>
+        <ul>
+            @foreach (var category in group.OrderBy(x => x.Name))
+            {
+                <li><a href="/category/@category.Slug">@category.Name</a></li>
+            }
+        </ul>
+    }
+}
+else
+{
+    <p>There are no categories.</p>
+}

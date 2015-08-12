@@ -1,0 +1,36 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.Frankenpage>
+@using System
+@using System.Linq
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = Model.Title;
+}
+
+@section tools {
+    <li><span class="glyphicon glyphicon-link"></span> <a href="/what-links-to/@Model.Slug" title="A list of articles that link to this article">What links here</a></li>
+}
+
+<h1>@Model.Title</h1>
+
+<hr />
+
+@Html.Raw(Model.Html)
+
+@if (Model.Categories.Any())
+{
+    <hr />
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-education"></span> Categories</h3>
+            <div class="panel-body">
+                <ul>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li><a href="/category/@category.Slug">@category.Name</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+}

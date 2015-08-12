@@ -1,0 +1,64 @@
+﻿@using System
+@using System.Linq
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    
+    <link href="/content/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/Content/site.css" rel="stylesheet"/>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+    <body>
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> Frankenwiki</a>
+                </div>
+                <form class="navbar-form navbar-right" action="/search" method="get">
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search" name="phrase"/>
+                    </div>
+                </form>
+            </div>
+        </nav>
+        
+        <div class="container frankenpage">
+            <div class="row">
+                <div class="col-md-2 well">
+                    <ul class="list-unstyled">
+                        <li><span class="glyphicon glyphicon-home"></span> <a href="/">Home</a></li>
+                        <li><span class="glyphicon glyphicon-list-alt"></span> <a href="/index">Index</a></li>
+                        <li><span class="glyphicon glyphicon-education"></span> <a href="/categories">All categories</a></li>
+                        @RenderSection("tools", false)
+                    </ul>
+                </div>
+                
+                <div class="col-md-offset-1 col-md-9">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <hr/>
+            <p>
+                <small>
+                    Generated using <a href="http://frankenwiki.com">Frankenwiki</a>.
+                    Content &copy; @DateTime.Now.Year YOUR COMPANY
+                </small>
+            </p>
+        </div>
+
+        <script src="/Content/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
