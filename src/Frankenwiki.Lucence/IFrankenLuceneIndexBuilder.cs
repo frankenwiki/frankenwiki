@@ -14,11 +14,11 @@ namespace Frankenwiki.Lucence
 
     public class FrankenLuceneIndexBuilder : IFrankenLuceneIndexBuilder
     {
-        private RAMDirectory _indexDirectory;
+        private Directory _indexDirectory;
 
-        public FrankenLuceneIndexBuilder()
+        public FrankenLuceneIndexBuilder(IFrankenluceneIndexDirectoryFactory _indexDirectoryFactory)
         {
-            _indexDirectory = new RAMDirectory();
+            _indexDirectory = _indexDirectoryFactory.Get();
         }
 
         private Document MapPageToLucenceDocument(Frankenpage frankenPage)

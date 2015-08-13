@@ -11,11 +11,11 @@ namespace Frankenwiki.Lucence
 {
     public class FrankenLuceneSearcher : IFrankensearch
     {
-        private RAMDirectory _indexDirectory;
+        private Directory _indexDirectory;
 
-        public FrankenLuceneSearcher()
+        public FrankenLuceneSearcher(IFrankenluceneIndexDirectoryFactory _indexDirectoryFactory)
         {
-            _indexDirectory = new RAMDirectory();
+            _indexDirectory = _indexDirectoryFactory.Get();
         }
 
 

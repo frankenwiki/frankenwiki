@@ -51,7 +51,8 @@
   <ItemGroup>
     <Compile Include="FrankenLuceneSearcher.cs" />
     <Compile Include="FrankenwikiGeneratedEventHandler.cs" />
-    <Compile Include="IFrankenLuceneSearcher.cs" />
+    <Compile Include="IFrankenluceneIndexDirectoryFactory.cs" />
+    <Compile Include="IFrankenLuceneIndexBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
