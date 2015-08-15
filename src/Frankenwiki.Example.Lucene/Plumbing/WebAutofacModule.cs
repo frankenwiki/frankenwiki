@@ -2,7 +2,6 @@
 using ConfigInjector.Configuration;
 using Frankenwiki.Configuration;
 using Frankenwiki.Domain.EventHandlers;
-using Frankenwiki.Events;
 using Frankenwiki.Lucence;
 
 namespace Frankenwiki.Example.Lucene.Plumbing
@@ -13,7 +12,7 @@ namespace Frankenwiki.Example.Lucene.Plumbing
         {
             ConfigurationConfigurator
                 .RegisterConfigurationSettings()
-                .FromAssemblies(typeof(WebAutofacModule).Assembly)
+                .FromAssemblies(typeof (WebAutofacModule).Assembly)
                 .RegisterWithContainer(s => builder.RegisterInstance(s).AsSelf().SingleInstance())
                 .AllowConfigurationEntriesThatDoNotHaveSettingsClasses(true)
                 .DoYourThing();
@@ -39,17 +38,7 @@ namespace Frankenwiki.Example.Lucene.Plumbing
                 .As<IDomainEventBroker>()
                 .SingleInstance();
             builder
-                .RegisterType<FrankenwikiGeneratedEventHandler>()
-                .As<IDomainEventHandler<FrankenwikiGeneratedEvent>>()
-                .SingleInstance();
-            builder
-                .RegisterType<FrankenLuceneRAMIndexDirectoryFactory>()
-                .As<IFrankenluceneIndexDirectoryFactory>()
-                .SingleInstance();
-            builder
-                .RegisterType<FrankenLuceneIndexBuilder>()
-                .As<IFrankenLuceneIndexBuilder>()
-                .SingleInstance();
+                .RegisterModule(new LuceneAutofacModule());
         }
     }
 }
