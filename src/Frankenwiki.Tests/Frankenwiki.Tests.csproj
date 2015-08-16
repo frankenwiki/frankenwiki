@@ -92,6 +92,7 @@
     <Compile Include="FrankengeneratorTests\CategoriesTests\MultipleCategoriesInYamlFrontMatterAreIdentified.cs" />
     <Compile Include="FrankengeneratorTests\CategoriesTests\NoCategoriesInYamlFrontMatterEqualsNoCategories.cs" />
     <Compile Include="FrankengeneratorTests\CategoriesTests\SingleCategoryInYamlFrontMatterIsIdentified.cs" />
+    <Compile Include="FrankengeneratorTests\DomainEventTests\WikiIsGenerated.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageHasCorrectBody.cs" />
     <Compile Include="FrankengeneratorTests\HtmlTests\SimplePageWithSomeYamlHasCorrectBody.cs" />
     <Compile Include="FrankengeneratorTests\TitleTests\WithH1SpecifyingTheTitle.cs" />
