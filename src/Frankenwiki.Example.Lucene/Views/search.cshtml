@@ -1,0 +1,19 @@
+﻿@using System
+@using System.Linq
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = Model.Title;
+}
+
+<h1>Search</h1>
+
+<hr />
+
+<div class="panel">
+    <form class="form-inline">
+        <div class="form-group">
+            <input type="search" name="phrase"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>

@@ -1,3 +1,5 @@
+using Frankenwiki.Domain.EventHandlers;
+using NSubstitute;
 using Shouldly;
 using TestStack.BDDfy;
 using Xunit;
@@ -13,7 +15,8 @@ namespace Frankenwiki.Tests.FrankengeneratorTests.TitleTests
 
         public void GivenGenerator()
         {
-            _generator = new Frankengenerator();
+            var domainEventBroker = Substitute.For<IDomainEventBroker>();
+            _generator = new Frankengenerator(domainEventBroker);
         }
 
         public void AndGivenAnInMemoryStore()

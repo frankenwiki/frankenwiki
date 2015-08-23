@@ -1,0 +1,53 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.Frankindex>
+@using System.Linq
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = "Category: " + Model.Name;
+}
+
+<h1>Category: @Model.Name</h1>
+
+<hr />
+
+@if (!string.IsNullOrEmpty(@Model.Html))
+{
+    @Html.Raw(Model.Html)
+
+    <hr />
+}
+else
+{
+    <p>
+        A description for this category can be added by creating a page 
+        in the root of your site wiki named <code>category-@(Model.Slug).md</code>
+    </p>
+}
+
+@if (Model.Items.Any())
+{
+    <h2>Articles</h2>
+    if (Model.Items.Count() > 1)
+    {
+        <p>There are @Model.Items.Count() articles in this category.</p>
+    }
+    else
+    {
+        <p>There is 1 article in this category.</p>
+    }
+
+    foreach (var group in Model.Items.GroupBy(x => x.Title.First()).OrderBy(x => x))
+    {
+        <h3>@group.Key</h3>
+        <ul>
+            @foreach (var item in group)
+            {
+                <li><a href="/wiki/@item.PageSlug">@item.Title</a></li>
+            }
+        </ul>
+    }
+}
+else
+{
+    <h2>No articles</h2>
+    <p>No articles are present in this category.</p>
+}

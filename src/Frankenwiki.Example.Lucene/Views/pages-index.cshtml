@@ -1,0 +1,39 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Frankenwiki.FrankindexItem[]>
+@using System.Linq
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<h1>Index</h1>
+
+<hr />
+
+@if (Model.Any())
+{
+    <h2>Articles</h2>
+    if (Model.Count() > 1)
+    {
+        <p>There are @Model.Count() articles.</p>
+    }
+    else
+    {
+        <p>There is 1 article.</p>
+    }
+
+    foreach (var group in Model.GroupBy(x => x.Title.First()).OrderBy(x => x.Key))
+    {
+        <h3>@group.Key</h3>
+        <ul>
+            @foreach (var item in group)
+            {
+                <li><a href="/wiki/@item.PageSlug">@item.Title</a></li>
+            }
+        </ul>
+    }
+}
+else
+{
+    <h2>No articles</h2>
+    <p>No articles are present.</p>
+}
